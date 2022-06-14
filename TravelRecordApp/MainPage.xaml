@@ -4,8 +4,8 @@
              x:Class="TravelRecordApp.MainPage">
 
     <StackLayout Margin="15" VerticalOptions="Center">
-        <Entry Placeholder="Email" Keyboard="Email"/>
-        <Entry Placeholder="Password" IsPassword="True"/>
+        <Entry x:Name="emailEntry" Placeholder="Email" Keyboard="Email"/>
+        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True"/>
         <Button x:Name="loginButton" 
                 Text="LogIn" 
                 TextColor="White" 
