@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TravelRecordApp.MainPage">
+             x:Class="TravelRecordApp.MainPage"
+             BackgroundColor="DarkGray">
 
     <StackLayout Margin="15" VerticalOptions="Center">
-        <Entry x:Name="emailEntry" Placeholder="Email" Keyboard="Email"/>
-        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True"/>
+        <Entry x:Name="emailEntry" Placeholder="Email" PlaceholderColor="{StaticResource blueColour}" Keyboard="Email" TextColor="{StaticResource blueColour}"/>
+        <Entry x:Name="passwordEntry" Placeholder="Password" PlaceholderColor="{StaticResource blueColour}" IsPassword="True" TextColor="{StaticResource blueColour}"/>
         <Button x:Name="loginButton" 
-                Text="LogIn" 
-                TextColor="White" 
-                BackgroundColor="#3f84e5"
-                Clicked="loginButton_Clicked"/>
+                Text="LogIn"
+                Clicked="loginButton_Clicked"
+                Style="{StaticResource normalButton}"/>
     </StackLayout>
 
 </ContentPage>
