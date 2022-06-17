@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Forms.Maps;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
+using Position = Xamarin.Forms.Maps.Position;
 
 namespace TravelRecordApp
 {
