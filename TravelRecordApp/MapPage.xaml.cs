@@ -11,6 +11,8 @@ using Xamarin.Forms.Maps;
 using Plugin.Geolocator;
 using Plugin.Geolocator.Abstractions;
 using Position = Xamarin.Forms.Maps.Position;
+using SQLite;
+using TravelRecordApp.Model;
 
 namespace TravelRecordApp
 {
@@ -29,6 +31,45 @@ namespace TravelRecordApp
             base.OnAppearing();
 
             GetLocation();
+
+            GetPosts();
+        }
+
+        private void GetPosts()
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<Post>();
+                var posts = conn.Table<Post>().ToList();
+
+                DisplayOnMap(posts);
+            }
+        }
+
+        private void DisplayOnMap(List<Post> posts)
+        {
+            foreach (var post in posts)
+            {
+                try
+                {
+                    var pinCoordinates = new Position(post.Latitude, post.Longitude);
+                    var pin = new Pin()
+                    {
+                        Position = pinCoordinates,
+                        Label = post.VenueName,
+                        Address = post.Address,
+                        Type = PinType.SavedPin
+                    };
+                    locationsMaps.Pins.Add(pin);
+                }
+                catch (NullReferenceException nre)
+                {
+
+                }catch (Exception ex)
+                {
+
+                }
+            }
         }
 
         protected override void OnDisappearing()

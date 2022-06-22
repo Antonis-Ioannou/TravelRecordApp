@@ -123,6 +123,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>13.0.1</Version>
+    </PackageReference>
     <PackageReference Include="sqlite-net-pcl">
       <Version>1.8.116</Version>
     </PackageReference>
@@ -141,5 +144,23 @@
       <Project>{70B4086C-DCBB-4037-A7B4-D137FCFFF9FE}</Project>
       <Name>TravelRecordApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\person%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\person%402x.png" />
   </ItemGroup>
 </Project>

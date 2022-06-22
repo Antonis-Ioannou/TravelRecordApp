@@ -2,9 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TravelRecordApp.MainPage"
-             BackgroundColor="DarkGray">
+             BackgroundColor="White">
 
     <StackLayout Margin="15" VerticalOptions="Center">
+        <Image x:Name="iconImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand" Margin="0,0,0,50" HeightRequest="275"/>
         <Entry x:Name="emailEntry" Placeholder="Email" PlaceholderColor="{StaticResource blueColour}" Keyboard="Email" TextColor="{StaticResource blueColour}"/>
         <Entry x:Name="passwordEntry" Placeholder="Password" PlaceholderColor="{StaticResource blueColour}" IsPassword="True" TextColor="{StaticResource blueColour}"/>
         <Button x:Name="loginButton" 
