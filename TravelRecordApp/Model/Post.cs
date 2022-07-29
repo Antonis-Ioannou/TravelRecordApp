@@ -7,15 +7,15 @@ namespace TravelRecordApp.Model
 {
     public class Post
     {
-        [PrimaryKey,AutoIncrement]
-        public int PostId { get; set; }
+        //[PrimaryKey,AutoIncrement]
+        public string Id { get; set; }
 
-        [MaxLength(250)]
+        //[MaxLength(250)]
         public string Experience { get; set; }
 
         public string VenueName { get; set; }
 
-        public int CategoryId { get; set; }
+        public string CategoryId { get; set; }
         
         public string CategoryName { get; set; }
 
@@ -26,5 +26,7 @@ namespace TravelRecordApp.Model
         public double Longitude { get; set; }
 
         public int Distance { get; set; }
+
+        public string UserId { get; set; }
     }
 }

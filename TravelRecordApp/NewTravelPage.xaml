@@ -1,18 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:TravelRecordApp.ViewModel"
              x:Class="TravelRecordApp.NewTravelPage">
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:NewTravelVM x:Key="newTrvl"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="save.png"
-                     Clicked="ToolbarItem_Clicked"/>
+                     BindingContext="{StaticResource newTrvl}"
+                     Command="{Binding SaveCommand}"
+                     CommandParameter="{Binding PostIsReady}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout>
-
-            <Entry x:Name="experienceEntry" Placeholder="Write your experience"/>
-            <ListView x:Name="venueListView" Margin="20,0" HorizontalOptions="FillAndExpand">
+        <StackLayout Margin="15,15,15,0"
+                     BindingContext="{StaticResource newTrvl}">
+            <Entry x:Name="experienceEntry" 
+                   Text="{Binding Experience}"
+                   Placeholder="Write your experience"/>
+            <ListView x:Name="venueListView" Margin="20,0"
+                      ItemsSource="{Binding Venues}"
+                      SelectedItem="{Binding SelectedVenue}"
+                      HorizontalOptions="FillAndExpand">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -34,11 +48,10 @@
                                 <Label Grid.Column="1"
                                        Text="{Binding distance,StringFormat='{0} meters'}"/>
                             </Grid>
-                        </ViewCell> 
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

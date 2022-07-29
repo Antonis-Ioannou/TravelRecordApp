@@ -13,6 +13,7 @@ using Plugin.Geolocator.Abstractions;
 using Position = Xamarin.Forms.Maps.Position;
 using SQLite;
 using TravelRecordApp.Model;
+using TravelRecordApp.Helpers;
 
 namespace TravelRecordApp
 {
@@ -35,15 +36,18 @@ namespace TravelRecordApp
             GetPosts();
         }
 
-        private void GetPosts()
+        private async void GetPosts()
         {
-            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            {
-                conn.CreateTable<Post>();
-                var posts = conn.Table<Post>().ToList();
+            //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            //{
+            //    conn.CreateTable<Post>();
+            //    var posts = conn.Table<Post>().ToList();
 
-                DisplayOnMap(posts);
-            }
+            //    DisplayOnMap(posts);
+            //}
+
+            var posts = await Firestore.Read();
+            DisplayOnMap(posts);
         }
 
         private void DisplayOnMap(List<Post> posts)

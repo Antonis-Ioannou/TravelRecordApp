@@ -66,6 +66,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
+    <None Include="GoogleService-Info.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -123,6 +124,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs">
+      <Version>7.2.0.564</Version>
+    </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>13.0.1</Version>
     </PackageReference>
@@ -162,5 +166,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\person%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dependencies\" />
   </ItemGroup>
 </Project>

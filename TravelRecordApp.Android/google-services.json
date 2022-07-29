@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "289765437473",
+    "project_id": "travelrecordapp-b81fa",
+    "storage_bucket": "travelrecordapp-b81fa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289765437473:android:0d9a74f5e30fbd21467360",
+        "android_client_info": {
+          "package_name": "com.companyname.travelrecordapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289765437473-n6fadboqo1n7nhf9ph22dja93lpocd4c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASvK92DidGr2wrC_i2MrvX4xVxFlNd8cY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289765437473-n6fadboqo1n7nhf9ph22dja93lpocd4c.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "289765437473-lms2uip22pgvafclp6dafk2rkf8kdv0n.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.companyname.TravelRecordApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

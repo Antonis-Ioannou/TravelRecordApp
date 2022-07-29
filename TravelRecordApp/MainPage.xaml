@@ -2,15 +2,39 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TravelRecordApp.MainPage"
+             xmlns:vm="clr-namespace:TravelRecordApp.ViewModel"
              BackgroundColor="White">
 
-    <StackLayout Margin="15" VerticalOptions="Center">
-        <Image x:Name="iconImage" Aspect="AspectFit" HorizontalOptions="FillAndExpand" Margin="0,0,0,50" HeightRequest="275"/>
-        <Entry x:Name="emailEntry" Placeholder="Email" PlaceholderColor="{StaticResource blueColour}" Keyboard="Email" TextColor="{StaticResource blueColour}"/>
-        <Entry x:Name="passwordEntry" Placeholder="Password" PlaceholderColor="{StaticResource blueColour}" IsPassword="True" TextColor="{StaticResource blueColour}"/>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:MainVM x:Key="woo"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <StackLayout Margin="15" 
+                 VerticalOptions="Center"
+                 BindingContext="{StaticResource woo}">
+        <Image x:Name="iconImage" 
+               Aspect="AspectFit" 
+               HorizontalOptions="FillAndExpand" 
+               Margin="0,0,0,50" 
+               HeightRequest="275"/>
+        <Entry x:Name="emailEntry"
+               Text="{Binding Email}"
+               Placeholder="Email" 
+               PlaceholderColor="{StaticResource blueColour}" 
+               Keyboard="Email" 
+               TextColor="{StaticResource blueColour}"/>
+        <Entry x:Name="passwordEntry"
+               Text="{Binding Password}"
+               Placeholder="Password" 
+               PlaceholderColor="{StaticResource blueColour}" 
+               IsPassword="True" 
+               TextColor="{StaticResource blueColour}"/>
         <Button x:Name="loginButton" 
                 Text="LogIn"
-                Clicked="loginButton_Clicked"
+                Command="{Binding LoginCommand}"
+                CommandParameter="{Binding EntriesHaveText}"
                 Style="{StaticResource normalButton}"/>
     </StackLayout>
 
